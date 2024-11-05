@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -155,7 +155,34 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 5
+vim.opt.scrolloff = 30
+
+-- My custom options
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.swapfile = false
+-- Keep find in middle of window
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+-- Move text up and down
+vim.keymap.set('n', '<A-j>', '<Esc>:m .+1<CR>==')
+vim.keymap.set('n', '<A-k>', '<Esc>:m .-2<CR>==')
+-- Move text up and down
+vim.keymap.set('v', '<A-j>', ':m .+1<CR>==')
+vim.keymap.set('v', '<A-k>', ':m .-2<CR>==')
+vim.keymap.set('v', 'p', '"_dP')
+-- Visual Block --
+-- Move text up and down
+vim.keymap.set('x', 'J', ":move '>+1<CR>gv-gv")
+vim.keymap.set('x', 'K', ":move '<-2<CR>gv-gv")
+vim.keymap.set('x', '<A-j>', ":move '>+1<CR>gv-gv")
+vim.keymap.set('x', '<A-k>', ":move '<-2<CR>gv-gv")
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
