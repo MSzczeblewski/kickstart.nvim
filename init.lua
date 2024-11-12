@@ -156,8 +156,9 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 30
-
+------------------------------------------------------------------------------
 -- My custom options
+------------------------------------------------------------------------------
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.tabstop = 4
@@ -167,23 +168,32 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.swapfile = false
+
 -- Keep find in middle of window
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
+
 -- Move text up and down
 vim.keymap.set('n', '<A-j>', '<Esc>:m .+1<CR>==')
 vim.keymap.set('n', '<A-k>', '<Esc>:m .-2<CR>==')
+
+-- Visual Line --
+-- Stay in indent mode
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
+
 -- Move text up and down
 vim.keymap.set('v', '<A-j>', ':m .+1<CR>==')
 vim.keymap.set('v', '<A-k>', ':m .-2<CR>==')
 vim.keymap.set('v', 'p', '"_dP')
+
 -- Visual Block --
 -- Move text up and down
 vim.keymap.set('x', 'J', ":move '>+1<CR>gv-gv")
 vim.keymap.set('x', 'K', ":move '<-2<CR>gv-gv")
 vim.keymap.set('x', '<A-j>', ":move '>+1<CR>gv-gv")
 vim.keymap.set('x', '<A-k>', ":move '<-2<CR>gv-gv")
-
+-- ----------------------------------------------------------------------------
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
